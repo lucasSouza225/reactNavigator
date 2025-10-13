@@ -2,8 +2,10 @@
 git config --global user.name lucasSouza225
 git config --global user.email lucas2469y@gmail.com
 
-
+npx expo install react-dom react-native-web
 
 npm i
 
 npm run android
+
+

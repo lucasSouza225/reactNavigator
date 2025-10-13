@@ -1,18 +1,23 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeScreen from './sreens/HomeScreen';
 import DetailsScreen from './sreens/DetailsScreen';
+import AboutScreen from './sreens/AboutScreen';
+import ProductsScreen from './sreens/ProductsScreen';
 
-const Stack = createStackNavigator();
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen name="Home" component={HomeScreen} options={{title: 'Tela incial '}}/>
+        <Tab.Screen name="Details" component={DetailsScreen} />
+        <Tab.Screen name='About' component={AboutScreen} />
+        <Tab.Screen name='Products' component={ProductsScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
